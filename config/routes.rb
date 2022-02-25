@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # post '/lists/:list_id/bookmarks', to: 'bookmarks#create'
   # delete '/bookmarks/:id', to: 'bookmarks#destroy'
   resources :lists, only: [:index, :new, :create, :show, :destroy] do
+  # resources :lists do
     resources :bookmarks, only: [:create, :new, :destroy]
   end
 end

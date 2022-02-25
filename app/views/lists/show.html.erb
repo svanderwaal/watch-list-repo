@@ -1,6 +1,14 @@
 <h1> <%= @list.name %> </h1>
+<p><% @list.movies.each do |movie| %></p>
+  <strong>Title:</strong> <%= movie.title %><br>
+  <strong>Overview:</strong> <%= movie.overview %><br>
+ <strong> Rating:</strong> <%= movie.rating %><br>
+  <% movie.bookmarks.each do |bookmark| %>
+    <strong>Comment:</strong> <%= bookmark.comment %><br>
+    <% end %>
+<% end %>
 
 <%# <p> <%= @answer %>
 <%= link_to '⬅ Back to lists', lists_path %> |
-<%# link_to '+ Add movie', list_bookmarks_path(@bookmark) %>
-<%# link_to '📝 Edit this list', edit_task_path(@task) %>
+<%= link_to '+ Add movie', new_list_bookmark_path(@list) %>
+<%# <%= link_to 'Edit', edit_task_path(@task) %>
