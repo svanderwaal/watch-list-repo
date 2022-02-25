@@ -1,4 +1,4 @@
-<h1>My Movie lists</h1>
+<h1>Movie lists</h1>
 <ul>
   <% @lists.each do |list| %>
     <li> <%= link_to "#{list.name}", list_path(list.id) %> | <%= link_to "Delete", list_path(list.id), data: {method: :delete, confirm: 'Are you sure?'} %> </li>
